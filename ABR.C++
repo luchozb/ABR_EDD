@@ -3,9 +3,7 @@
 #include <cstring>
 using namespace std;
 
-// ==========================================
 //   BLOQUE 1: DEFINICIÓN DE ESTRUCTURAS
-// ==========================================
 
 // Nodo para representar un Proceso (Gestor de Procesos y Planificador CPU)
 struct Proceso {
@@ -23,18 +21,14 @@ struct Memoria {
     Memoria *anterior; // Puntero al elemento de abajo en la pila
 };
 
-// ==========================================
 //   BLOQUE 2: VARIABLES GLOBALES
-// ==========================================
 
 // Punteros de control para las tres estructuras principales exigidas
 Proceso *listaProcesos = NULL; // Cabeza de la Lista Enlazada Simple
 Proceso *colaCPU = NULL;       // Frente de la Cola de Prioridad
 Memoria *pilaMemoria = NULL;   // Tope de la Pila Dinámica
 
-// ==========================================
 //   BLOQUE 3: VALIDACIÓN Y BÚSQUEDA
-// ==========================================
 
 // Recorre secuencialmente la lista para verificar si un ID ya existe
 bool existeProceso(int id) {
@@ -100,9 +94,7 @@ void buscarProceso() {
     }
 }
 
-// ==========================================
 //   BLOQUE 4: GESTIÓN DE LA LISTA PRINCIPAL
-// ==========================================
 
 // Crea un nuevo nodo de proceso, valida sus campos y lo añade al final de la lista
 void registrarProceso() {
@@ -276,9 +268,7 @@ void eliminarProceso() {
     }
 }
 
-// ==========================================
 //   BLOQUE 5: COLA DE PRIORIDAD (PLANIFICADOR CPU)
-// ==========================================
 
 // Inserta un clon de un proceso en una cola ordenada de mayor a menor prioridad
 void encolarCPU() {
@@ -372,9 +362,7 @@ void mostrarColaCPU() {
     cout << "Total de procesos en espera: " << pos - 1 << "\n";
 }
 
-// ==========================================
 //   BLOQUE 6: PILA DE MEMORIA (GESTOR LIFO)
-// ==========================================
 
 // Inserta un bloque de memoria en el tope de la estructura (Operación PUSH)
 void asignarMemoria() {
@@ -449,9 +437,7 @@ void mostrarMemoria() {
     cout << "-------------------------\n";
 }
 
-// ==========================================
 //   BLOQUE 7: ENTRADA/SALIDA DE ARCHIVOS
-// ==========================================
 
 // Escribe secuencialmente los datos de la Lista Principal en un archivo plano de texto
 void guardarArchivo() {
@@ -511,9 +497,7 @@ void cargarArchivo() {
     archivo.close();
 }
 
-// ==========================================
 //   BLOQUE 8: LIMPIEZA DE MEMORIA Y MENÚ
-// ==========================================
 
 // Recorre de forma exhaustiva todas las estructuras dinámicas aplicando "delete" para evitar Fugas de Memoria
 void liberarTodaLaMemoria() {
